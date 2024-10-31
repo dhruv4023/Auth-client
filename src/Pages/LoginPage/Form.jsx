@@ -52,6 +52,7 @@ const Form = ({ pageType, editProfile, user }) => {
     setValues({ ...values, [name]: fl });
   };
 
+  console.log(values)
   const token = useSelector((s) => s.token);
 
   const handleFormSubmit = async (e) => {

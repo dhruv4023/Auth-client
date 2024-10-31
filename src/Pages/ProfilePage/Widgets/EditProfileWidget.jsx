@@ -1,6 +1,5 @@
 import React from "react";
 import FlexBetween from "../../../Components/FlexBetween";
-import WidgetWrapper from "../../../Components/WidgetWrapper";
 import Form from "../../LoginPage/Form";
 import { useMediaQuery } from "@mui/material";
 

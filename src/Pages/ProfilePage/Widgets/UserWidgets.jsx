@@ -11,7 +11,6 @@ import { Divider, IconButton, Typography } from "@mui/material";
 import { Box, useMediaQuery } from "@mui/system";
 import FlexBetween from "../../../Components/FlexBetween";
 import UserImg from "../../../Components/UserImg";
-import WidgetWrapper from "../../../Components/WidgetWrapper";
 import EditProfileWidget from "./EditProfileWidget";
 import FlexBetweenColumn from "../../../Components/FlexBetweenColumn";
 

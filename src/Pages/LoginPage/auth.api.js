@@ -12,10 +12,12 @@ const api = axios.create({
 export const registerApiCall = async (values) => {
   try {
     const formData = new FormData();
+    console.log(values["picPath"])
     if (values["picPath"] === "") delete values["picPath"];
+
     appendData(formData, values);
 
-    const response = await api.post(`/auth/register`, formData);
+    const response = await axios.post(`${process.env.REACT_APP_REST_API}/auth/register`, formData);
     return { success: true, message: response.data.message || "Registration successful. Please log in!" };
   } catch (error) {
     const message = error?.response?.data?.message || "Error while registering";
@@ -69,8 +71,10 @@ export const updateProfile = async ({ values, dispatch, token, navigate }) => {
     appendData(formData, values);
     if (values["picPath"] === "") delete values["picPath"];
 
-    const savedUserResponse = await api.put(`/user/update`, formData, {
-      headers: { Authorization: token },
+    const savedUserResponse = await axios.put(`${process.env.REACT_APP_REST_API}/user/update`, formData, {
+      headers: {
+        "Authorization": token,
+      }
     });
     const savedUser = savedUserResponse.data;
     if (savedUser?.data?.user) {
